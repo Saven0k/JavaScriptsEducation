@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="first_task">
+        <h1>Введите имя, фамилию, возраст</h1>
+
+        <input type="text"   id="name" placeholder="Имя" class="input">
+        <input type="text" id="secondName" placeholder="Фамилия" class="input">
+        <input type="text" id="age" placeholder="Возраст" class="input">
+        <button class="button" type="submit" onclick="{hello()}">Ввести</button>
+        <script src="./index.js"></script>
+
+        <div class="str" id="str"></div>
+    </div>
+
+    <div class="second_task">
+
+        <h1>Возвдение в квадрат</h1>
+        <input type="text" placeholder="Введите число" id="number" class="inout">
+        <button class="button" id="button" onclick="{square()}">Возвести в квадрат</button>
+        <div class="task2" id="task2"></div>
+    </div>
+
+    <div class="third_task">
+
+        <h1>Положительное или отицательное??</h1>
+        <input type="number" id="number3" placeholder="Введите число: " class="input">
+        <button class="button" id="button" onclick="{plusOrMinus(number3.value)}">ПОложительное или отрицательно?</button>
+        <div class="task3" id="task3"></div>
+        
+    </div>
+
+
+        
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="task2" placeholder="Введите число">
+    <button onclick="{numberController(task2.value)}">Отправить</button>
+    <div class="scr" id="scr">
+
+    <h1>Запралата без налога</h1>
+    <input type="text" id="salaty">
+    <button onclick="{NDS(salaty.value)}">Высчитать</button>
+    <div class="scr2" id="scr2"></div>
+    </div>
+
+
+    <h1 style="margin-top: 50px;">Калькулятор</h1>
+    <div class="caculator">
+        
+        <div class="numbers">
+            <input type="number" id="number1" placeholder="Первое число">
+            <input type="number" id="number2" placeholder="Второе число">
+        </div>
+        <div class="actions">
+            <button onclick="{sum(number1,number2)}" id="sum" >+</button>
+            <button onclick="{division(number1,number2)}" id="division" >/</button>
+            <button onclick="{multiplication(number1,number2)}" id="multiplication" >*</button>
+            <button onclick="{subtraction(number1,number2)}" id="subtraction" >-</button>
+        </div>
+        <div class="result" id="result">
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
