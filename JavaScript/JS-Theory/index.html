@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первый урок</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+  <!-- <div id="app" class="app"></div> -->
+  <div class="app">
+    <input type="text" id="login">
+    <input type="text" id="password">
+    <button onclick='{
+    const password = document.getElementById("password").value;
+
+    const login = document.getElementById("login").value;
+    if (password === "max" && login === "123") {
+      console.log(password, login);  
+    }else {
+      console.log("gg")
+    }
+    }'>
+      Войти
+    </button>
+  </div>
+
+  <!-- <script src="js/React.js" type="text/babel"></script> -->
+  <!-- <script src="./ThemesJavaScripts/function.js" type="text/babel"></script> -->
+</body>
+
+</html>

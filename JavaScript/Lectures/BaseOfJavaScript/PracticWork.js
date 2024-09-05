@@ -29,7 +29,7 @@ if (1 <= day <= 10) {
 let number = Number(prompt("введите число"));
 
 function splitToDigits(number) {
-    var digits = [];
+    let digits = [];
     while (number) {
         digits.push(number % 10);
         number = Math.floor(number / 10);
