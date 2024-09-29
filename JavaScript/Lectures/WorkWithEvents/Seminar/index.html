@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="task1">
+        <div class="content">
+            <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Имеет, наш рыбными
+                рыбного текст взобравшись океана залетают языкового рот.</p>
+            <div class="content__info">
+                <input type="checkbox" name="ckeck" class="check" id="check">
+                <label for="check">Согласен с условием</label>
+            </div>
+            <button class="button1" style="width: 100px;">Отправить</button>
+        </div>
+    </div>
+    <div class="line"
+        style="width: 100vw; height: 10px; background-color: #000; margin-top: 150px; margin-bottom: 150px;"></div>
+
+    <div class="task2">
+        <input type="radio" name="t2" id="tea">
+        <label for="tea">Чай</label>
+        <input type="radio" name="t2" id="coffe">
+        <label for="coffe">Кофе</label>
+        <button class="button2">Отправить</button>
+    </div>
+
+    <div class="line"
+        style="width: 100vw; height: 10px; background-color: #000; margin-top: 150px; margin-bottom: 150px;"></div>
+
+    <div class="task3" style="display: flex; flex-direction: column; width: 300px;">
+        <input type="password" name="password" id="password" class="input" placeholder="пароль">
+        <button class="button3">Отправить</button>
+    </div>
+
+    <div class="line"
+    style="width: 100vw; height: 10px; background-color: #000; margin-top: 150px; margin-bottom: 150px;"></div>
+
+    <div class="taks4">
+        <input type="text" id="text" class="input-text">
+        <h1>загаловок</h1>
+
+    </div>
+
+
+    <script>
+
+        //task4 
+        const inputTextElm = document.querySelector('.input-text');
+        const h1Elm = document.querySelector('h1')
+
+        inputTextElm.addEventListener('input', (e) => {
+            h1Elm.textContent = inputTextElm.value;
+        })
+
+        //task 1
+        const buttonElm = document.querySelector('.button1');
+        const boxAgree = document.querySelector('.content__info');
+        const checkElm = boxAgree.querySelector('.check');
+        const errorElm = document.createElement("h2");
+        errorElm.textContent = "Выберете согласие";
+        const okeyElm = document.createElement("h2");
+        okeyElm.textContent = "Доброе пожаловать!";
+
+        buttonElm.addEventListener('click', (e) => {
+            if (!checkElm.checked) {
+                boxAgree.appendChild(errorElm);
+            } else {
+                boxAgree.removeChild(errorElm)
+                boxAgree.appendChild(okeyElm)
+            }
+        })
+
+        //task 2
+        const teaElm = document.querySelector('#tea')
+        const coffeElm = document.querySelector('#coffe')
+        const buttElm = document.querySelector('.button2')
+
+        const teah2Elm = document.createElement('h2')
+        teah2Elm.textContent = 'Чай закончился'
+        const coffe2Elm = document.createElement('h2')
+        coffe2Elm.textContent = 'Кофе закончился'
+
+
+        buttElm.addEventListener('click', (e) => {
+            if (teaElm.checked) {
+                teaElm.parentElement.appendChild(teah2Elm)
+                teaElm.parentElement.removeChild(coffe2Elm)
+            } else if (coffeElm.checked) {
+                coffeElm.parentElement.appendChild(coffe2Elm)
+                coffeElm.parentElement.removeChild(teah2Elm)
+            }
+
+        })
+
+
+        //task3
+
+        const pasElm = document.querySelector('.input');
+        const but3Elm = document.querySelector('.button3');
+
+        const h2ErorrElm = document.createElement('h2');
+        h2ErorrElm.textContent = "Пароль неверный"
+
+        but3Elm.addEventListener('click', (e) => {
+            if (pasElm.value === "пароль") {
+                pasElm.style.border = " 3px solid green"
+                pasElm.parentElement.removeChild(h2ErorrElm)
+
+            } else {
+                pasElm.style.border = " 3px solid red"
+
+                pasElm.parentElement.appendChild(h2ErorrElm)
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
