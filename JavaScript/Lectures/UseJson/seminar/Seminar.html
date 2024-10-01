@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script src="./data.js"></script>
+    <script>
+        const data = JSON.parse(dataInfo);
+        console.log(data);
+        data.forEach(element => {
+           console.log(element.id) 
+        });
+
+
+
+        const dataElm = document.querySelector('.content');
+
+        data.forEach(element => {
+            const h1Elm = document.createElement('h1');
+            h1Elm.classList.add('id')
+            h1Elm.textContent = element.id;
+
+            const nameElm = document.createElement('h2');
+            nameElm.classList.add('name')
+            nameElm.textContent = element.name
+
+            const secondNameElm = document.createElement('h2');
+            secondNameElm.classList.add('secondName')
+            secondNameElm.textContent = element.secondName
+            
+            const ageElm = document.createElement('h2');
+            ageElm.classList.add('age')
+            ageElm.textContent = element.age
+
+
+            const contentElm = document.createElement('div')
+            contentElm.classList.add('box')
+            contentElm.style.display = 'flex';
+            contentElm.style.gap =  '10px';
+            contentElm.appendChild(h1Elm)
+            contentElm.appendChild(nameElm)
+            contentElm.appendChild(secondNameElm)
+            contentElm.appendChild(ageElm)
+
+            dataElm.appendChild(contentElm)
+        });
+
+    </script>
+</body>
+
+</html>

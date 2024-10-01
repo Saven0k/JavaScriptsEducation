@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Добро пожаловать </h1>
+        <h1>Все прочитано из файла json</h1>
+        <div class="content"></div>
+    </div>
+    <script src="./data.js"></script>
+    <script>
+        const contentElm = document.querySelector('.content');
+        const data = JSON.parse(dataInfo);
+        data.forEach(element => {
+            const boxElm = document.createElement('div')
+            boxElm.classList.add('box');
+
+            const numberElm = document.createElement('h1');
+            numberElm.textContent = element.number;
+            numberElm.classList.add('box__elm')
+
+            const languageElm = document.createElement('h2');
+            languageElm.textContent = element.languagel;
+            languageElm.classList.add('box__language')
+
+            const insultElm = document.createElement('p');
+            insultElm.textContent = element.insult;
+            insultElm.classList.add('box__insult')
+
+            const imgElm = document.createElement('img');
+            imgElm.setAttribute('src', element.scr)
+            imgElm.classList.add('img')
+
+            boxElm.appendChild(numberElm)
+            boxElm.appendChild(languageElm)
+            boxElm.appendChild(insultElm)
+            boxElm.appendChild(imgElm)
+
+            contentElm.append(boxElm)
+        });
+    </script>
+</body>
+</html>
