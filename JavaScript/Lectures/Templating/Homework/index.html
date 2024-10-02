@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="start">
+            <h1 class="h1">Featured Items</h1>
+            <p class="p">Shop for items based on what we featured in this week</p>
+        
+        </div>
+        <div class="content">
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script>
+        // Ловим div с классом content
+        const contentElm = document.querySelector('.content');
+
+        // Из json читаем данные
+        const data = JSON.parse(dataProducts);
+        // Через цикл бежим по объектам
+        data.forEach(element => {
+
+            // Создаем карточку продукта
+            const productBox = document.createElement('div');
+            // Задаем ей классы
+            productBox.classList.add('product__item');
+            // Добавляем в нее элементы 
+
+
+
+            // Создаем картинку и передаем ей значение 
+            const imgElm = document.createElement('img');
+            
+                // Меняем ее src
+                imgElm.setAttribute('src', element.img)
+            
+                    // Добавляем в карточку
+                    productBox.appendChild(imgElm)
+
+
+            // Создаем элемент, в который будем добавлять информацию
+            const infoElm = document.createElement('div');
+            
+                // Задаем ему класс
+                infoElm.classList.add('info__block')
+            
+            // Создаем в нём элементы
+
+            // Название продукта
+            const nameElm = document.createElement('h1');
+                // Класс + текст внутри
+                nameElm.classList.add('item')
+                nameElm.classList.add('info__name')
+                nameElm.textContent = element.name;
+
+                    // Доабвляем в div info
+                    infoElm.appendChild(nameElm);
+
+            
+
+            // Информация о продукте
+            const discElm = document.createElement('p')
+                // Класс + содержимое
+                discElm.classList.add('item')
+                discElm.classList.add('disc__item')
+                discElm.textContent = element.info;
+
+                    // Доабвляем в div info
+                    infoElm.appendChild(discElm);
+            
+
+
+            // Цена товара
+            const priceElm = document.createElement('h2');
+                // Класс + содержимое
+                priceElm.classList.add('item');
+                priceElm.innerHTML = `<span class="span">${element.price}</span>`
+
+                    // Доабвляем в div info
+                    infoElm.appendChild(priceElm);
+
+            
+
+            // В карточку продукта добавляем информацию
+            productBox.appendChild(infoElm)
+
+            // В content добавляем product
+            contentElm.appendChild(productBox)
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

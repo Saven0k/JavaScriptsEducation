@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="amin">
+        <div class="content"></div>
+    </div>
+    <script src="./data.js"></script>
+    <script>
+        const mainElm = document.querySelector(".content");
+        const data = JSON.parse(dataProducts);
+
+        data.forEach(element => {
+            const productBox = document.createElement('div');
+            productBox.classList.add('product');
+
+            const vectorX = document.createElement('img');
+            vectorX.setAttribute('src', './Vector.svg')
+            vectorX.classList.add('img');
+
+
+            const imgElm = document.createElement('img');
+            imgElm.setAttribute('src', element.image);
+            imgElm.classList.add('img__elm')
+
+            const infoProductItem = document.createElement('div');
+            infoProductItem.classList.add('info')
+
+            const nameElm = document.createElement('h1');
+            nameElm.classList.add('product__name');
+            nameElm.textContent = element.name;
+
+            const priceElm = document.createElement('h3');
+            priceElm.classList.add('product__price');
+            priceElm.classList.add('item');
+            priceElm.innerHTML = `
+            Price: <span class="span">$${element.price}</span>
+            `
+
+            const colorELm = document.createElement('h3');
+            colorELm.classList.add("product__color");
+            colorELm.classList.add("item");
+            colorELm.textContent = `Color: ${element.color}`;
+
+            const sizeElm = document.createElement('h3');
+            sizeElm.classList.add('product__size');
+            sizeElm.classList.add('item');
+            sizeElm.textContent = `Size: ${element.size}`;
+
+            const quantityElm = document.createElement('h3');
+            quantityElm.classList.add('product__quantity');
+            quantityElm.classList.add('item');
+            quantityElm.innerHTML = `
+            <div> Quantity: <input type="text" name"count" value="${element.quantity}" class="span_elm"></div>` ;
+
+            productBox.appendChild(imgElm)
+            
+            infoProductItem.appendChild(nameElm)
+            infoProductItem.appendChild(priceElm);
+            infoProductItem.appendChild(colorELm);
+            infoProductItem.appendChild(sizeElm);
+            infoProductItem.appendChild(quantityElm);
+            
+            productBox.appendChild(infoProductItem)
+            productBox.appendChild(vectorX)
+            mainElm.appendChild(productBox)
+        });
+    </script>
+</body>
+
+</html>

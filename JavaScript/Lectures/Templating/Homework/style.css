@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.h1 {
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+
+}
+
+.p {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: center;
+    color: #9F9F9F;
+}
+
+.main {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 1140px;
+    height: 1395px;
+    flex-wrap: wrap;
+
+}
+
+.product__item {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 587px;
+    gap: 25px;
+}
+
+.info__block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: 16px;
+}
+
+.info__name {
+
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.6px;
+    text-align: left;
+
+}
+
+.disc__item {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.8px;
+    text-align: left;
+}
+
+.span {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: #F16D7F;
+
+}
