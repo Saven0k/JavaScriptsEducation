@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        
+        <div class="video">
+            <video src="./img/istockphoto-1616897621-640_adpp_is.mp4"></video>
+            <div class="misc">
+                <div class="buttons">
+                    <button class="button_click">
+                        <img src="./img/play-buttton.png" alt="" class=" img play">
+                        <img src="./img/pause.png" alt="" class=" img pause">
+                    </button>
+                
+
+                </div>
+                <div class="progress">
+                    <input type="range" class="timing" value="0" step="0.001">
+                    <p class="currentTimeElm">0</p>
+                </div>
+                <div class="volum">
+                    <img src="./img/volume-up.png" alt="" class="img">
+                    <input type="range" class="volum_level"  value="0.1" min="0" max="1" step="0.01">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const videoElm = document.querySelector('video');
+        const buttonClick = document.querySelector('.button_click');
+        const imgPlay = document.querySelector('.play');
+        const imgPause = document.querySelector('.pause');
+        const timingElm = document.querySelector('.timing');
+        const volumeElm = document.querySelector('.volum_level');
+        const currentTimeELm = document.querySelector('.currentTimeElm')
+
+        buttonClick.addEventListener('click', (e) => {
+            if (window.getComputedStyle(imgPlay).display == "flex") {
+                imgPlay.style.display = 'none';
+                imgPause.style.display = 'flex'
+
+                videoElm.play();
+            } else {
+                imgPause.style.display = 'none';
+                imgPlay.style.display = 'flex'
+                videoElm.pause();
+            }
+        })
+
+        videoElm.addEventListener('timeupdate', (e) => {
+            currentTimeELm.innerHTML =` ${Math.round(videoElm.currentTime)}s`;
+            timingElm.value = videoElm.currentTime / videoElm.duration  * 100;
+        });
+
+        volumeElm.addEventListener('input', (e) => {
+            videoElm.volume = volumeElm.value;
+        })
+
+        timingElm.addEventListener('input', (e) => {
+            videoElm.currentTime = timingElm.value / 100 * videoElm.duration
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video {
+    width: 1000px;
+
+    video {
+        display: flex;
+        width: 100%;
+    }
+
+    .misc {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-left: 30px;
+    }
+}
+
+.volum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.img {
+    width: 25px;
+    height: 25px;
+}
+
+.button_click {
+    transition: 0.5s;
+}
+
+.pause {
+    display: none;
+}
+
+.timing {
+    width: 30vw;
+}
+
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.button_click:hover {
+    transform: scale(1.1) rotate(5deg);
+
+}
