@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.message {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  align-items: center;
+  background-color: #000;
+
+  p {
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    font-weight: 900;
+  }
+}
