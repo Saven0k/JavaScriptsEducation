@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ClearIcon from '@mui/icons-material/Clear';
+import image from './broom.png'
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
@@ -28,30 +29,12 @@ function TodoList() {
         setArr([...arr, log]);
         setCounter(counter + 1)
         setinputText("");
-
-
-        console.log(arr.length)
     }
     const deleteTask = (id) => {
         setArr(arr.filter(p => p.id != id))
-    }
+    }   
 
-    // function BasicCard(text, id) {
-    //     return (
-    //         <Card key={item.id} id={item.id} sx={{ maxWidth: 400 }}>
-    //             <CardContent style={{ display: 'flex' }}>
-    //                 <Typography gutterBottom>
-    //                     {item.text}
-    //                 </Typography>
-    //                 <button onMouse={deleteTask(item.id)} class='button'>
-    //                     <ClearIcon sx={{ marginLeft: 5, marginTop: -2 }} fontSize="large" />
-    //                 </button>
-    //             </CardContent>
-    //         </Card>
-    //     );
-    // }
-
-
+    
     return (
         <div class="tasks">
             <div class="tasksInput">
@@ -60,14 +43,14 @@ function TodoList() {
             </div>
             <div class="list">
                 {arr.map((item) => (
-                        // <li id={item.id} key={item.id}>{item.text}</li>
-                    <Card key={item.id} id={item.id} sx={{ maxWidth: 400 }}>
+                    <Card key={item.id} id={item.id} sx={{ maxWidth: 500 }}>
                         <CardContent style={{ display: 'flex' }}>
                             <Typography gutterBottom>
                                 {item.text}
                             </Typography>
-                            <button onMouse={deleteTask(item.id)} class='button'>
-                                <ClearIcon sx={{ marginLeft: 5, marginTop: -2 }} fontSize="large" />
+                            <button id={item.id}  class='buttona'>
+                                {/* <ClearIcon class="aaaaa" /> */}
+                                <img  src={image} id={item.id} onClick={(e) => (deleteTask(item.id))} class="aaaaa"/>
                             </button>
                         </CardContent>
                     </Card>

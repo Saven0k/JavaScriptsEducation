@@ -65,26 +65,24 @@ body {
   gap: 25px;
 }
 
-.list {
-  margin-top: 50px;
-  ul {
-    gap: 5px;
-
-    li::marker {
-      content: '❤';
-    }
-  }
-}
 
 .MuiCardContent-root {
   display: flex;
   flex-direction: row;
 }
 
-.button {
+.buttona {
   display: flex;
-  outline: none;
   border: none;
   width: auto;
   background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.aaaaa {
+  width: 25px;
+  margin-left: 40px;
+  margin-top: -15px;
 }

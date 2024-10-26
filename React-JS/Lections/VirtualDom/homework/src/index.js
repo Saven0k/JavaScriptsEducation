@@ -10,6 +10,7 @@ root.render(
   <React.StrictMode>
     <TemperatureConverter />
     <TodoList />
+
   </React.StrictMode>
 );
 
