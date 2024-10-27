@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+
+.home, .about {
+  width: 50%;
+  height: 50%;
+  color: white;
+
+  position: relative;
+
+  .link {
+
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    font-size: 26px;
+    text-decoration: none;
+    color: red;
+    transition: 0.5s;
+  }
+  .link:hover {
+    transform: scale(1.5);
+  }
+}
